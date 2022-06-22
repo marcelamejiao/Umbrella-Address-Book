@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+      rel="stylesheet" 
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Umbrella</title>
+  </head>
+
+  <body>
+    <header class="bg-dark text-light text-center">
+      <h1>Umbrella</h1>
+      <p>An address book to find my friends, join them and see the current weather. </p>
+    </header>
+
+    <main>
+    <div class="d-flex flex-row">
+      <!-- Contacts section -->
+      <section id="contacts" class="d-flex flex-column col-5 border border-secondary">        
+          <div class="d-flex flex-row">
+            <div class="col-11">
+              <h2 class= "bg-dark text-light">Contacts</h2>
+            </div>
+            <div class="col-1">
+              <button class="float-right">+</button>
+            </div>
+          </div>
+          <div>
+            <h3>Contact List</h3>
+            <ol>
+            </ol>
+          </div>
+      </section>
+
+      <section id="contact-data" class="d-flex flex-column col-7">
+        <div class="d-flex flex-row">
+          <!-- Display current contact weather -->
+          <section class="col-9 border border-secondary">
+            <div class="container" id="weather">
+              <h2>Weather</h2>
+          </section>
+
+          <!-- Current contact information -->
+          <section class="col-3 border border-secondary">
+            <div class="container" id="contact-info">
+              <h4>Contact Information</h4>
+            </div>
+          </section>
+        </div>
+
+        <!-- Display contact location on map -->
+        <section class="col-12 border border-secondary">
+          <div class="container" id="location-map">
+            <h2>Map</h2>
+          </div>
+        </section>
+      </section>
+
+      
+
+
+      <!-- Form - Add new contact -->
+      <div >
+        <form class="d-none">
+          <h2>New Contact Information</h2>
+        </form>
+      </div>
+    </div>
+    </main>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
