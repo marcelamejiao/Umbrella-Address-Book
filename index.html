@@ -31,62 +31,60 @@
   <body>
     <header class="bg-dark text-light text-center">
       <h1>Umbrella</h1>
-      <p>An address book to find my friends, join them and see the current weather. </p>
+      <p>An address book to find my friends, join them and see the current weather.</p>
     </header>
 
     <main>
-    <div class="d-flex flex-row">
-      <!-- Contacts section -->
-      <section id="contacts" class="d-flex flex-column col-5 border border-secondary">        
-          <div class="d-flex flex-row">
-            <div class="col-11">
-              <h2 class= "bg-dark text-light">Contacts</h2>
+      <div class="d-flex flex-row">
+        <!-- Contacts section -->
+        <section id="contacts" class="d-flex flex-column col-5 border border-secondary">        
+            <div class="d-flex flex-row">
+              <div class="col-11">
+                <h2 class= "bg-dark text-light">Contacts</h2>
+              </div>
+              <div class="col-1">
+                <button class="float-right">+</button>
+              </div>
             </div>
-            <div class="col-1">
-              <button class="float-right">+</button>
+            <div>
+              <h3>Contact List</h3>
+              <ol>
+              </ol>
             </div>
-          </div>
-          <div>
-            <h3>Contact List</h3>
-            <ol>
-            </ol>
-          </div>
-      </section>
-
-      <section id="contact-data" class="d-flex flex-column col-7">
-        <div class="d-flex flex-row">
-          <!-- Display current contact weather -->
-          <section class="col-9 border border-secondary">
-            <div class="container" id="weather">
-              <h2>Weather</h2>
-          </section>
-
-          <!-- Current contact information -->
-          <section class="col-3 border border-secondary">
-            <div class="container" id="contact-info">
-              <h4>Contact Information</h4>
-            </div>
-          </section>
-        </div>
-
-        <!-- Display contact location on map -->
-        <section class="col-12 border border-secondary">
-          <div class="container" id="location-map">
-            <h2>Map</h2>
-          </div>
         </section>
-      </section>
 
-      
+        <section id="contact-data" class="d-flex flex-column col-7">
+          <div class="d-flex flex-row">
+            <!-- Display current contact weather -->
+            <section class="col-9 border border-secondary">
+              <div class="container" id="weather">
+                <h2>Weather</h2>
+              </div>
+            </section>
 
+            <!-- Current contact information -->
+            <section class="col-3 border border-secondary">
+              <div class="container" id="contact-info">
+                <h4>Contact Information</h4>
+              </div>
+            </section>
+          </div>
 
-      <!-- Form - Add new contact -->
-      <div >
-        <form class="d-none">
-          <h2>New Contact Information</h2>
-        </form>
+          <!-- Display contact location on map -->
+          <section class="col-12 border border-secondary">
+            <div class="container" id="location-map">
+              <h2>Map</h2>
+            </div>
+          </section>
+        </section>
+
+        <!-- Form - Add new contact -->
+        <div>
+          <form class="d-none">
+            <h2>New Contact Information</h2>
+          </form>
+        </div>
       </div>
-    </div>
     </main>
 
     <!-- JS -->
