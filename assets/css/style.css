@@ -1,36 +1,28 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: ;
+    margin: 0;
 }
 
 #contacts {
- display: flex
- margin: 20 20 20 20 
- width: 100%;
- background-color: grey;
- background-size: cover;
- position: left;
-}
-#contact-data{
-
-}
-#contact-info{
-
+    display: flex;
+    margin: 20 20 20 20;
+    width: 100%;
+    background-color: grey;
+    background-size: cover;
+    position: left;
 }
 
-#weather     {
-  
-}
+#contact-data {}
 
-#location-map{
-      height: 500px;
-      width: 100%;
-    }
-}
+#contact-info {}
 
-footer {
+#weather {}
 
+#location-map {
+    height: 500px;
+    width: 100%;
 }
 
 
+footer {}
