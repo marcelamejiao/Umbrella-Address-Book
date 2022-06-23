@@ -1,11 +1,9 @@
 // Rendering a map from Google Maps API
 
-// Defining my API Key
-var apiKey = "AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A";
-
 // Converts address to Lat and Long values and renders Map
 function addressToMap(address){
-    fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + '&key=' + apiKey)
+    // API call to geocode the address. Added my API in the function instead of global variable to reduce merge conflicts
+    fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + '&key=' + "AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A")
       .then(response => response.json())
       .then(data => {
         // Gets the address longitude and latitude coordinates
