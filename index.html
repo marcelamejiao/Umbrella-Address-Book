@@ -37,33 +37,33 @@
     <main>
       <div class="d-flex flex-row">
         <!-- Contacts section -->
-        <section id="contacts" class="d-flex flex-column col-5 border border-secondary">        
+        <section id="contacts" class="d-flex flex-column bg-light col-5">        
             <div class="d-flex flex-row">
               <div class="col-11">
                 <h2 class= "bg-dark text-light">Contacts</h2>
               </div>
               <div class="col-1">
-                <button class="float-right">+</button>
+                <button id="add-button">+</button>
               </div>
             </div>
             <div>
-              <h3>Contact List</h3>
+              <h4>Contact List</h4>
               <ol>
               </ol>
             </div>
         </section>
 
-        <section id="contact-data" class="d-flex flex-column col-7">
+        <section id="contact-data" class="bg-light d-flex flex-column col-7">
           <div class="d-flex flex-row">
             <!-- Display current contact weather -->
-            <section class="col-9 border border-secondary">
+            <section class="col-9">
               <div class="container" id="weather">
                 <h2>Weather</h2>
               </div>
             </section>
 
             <!-- Current contact information -->
-            <section class="col-3 border border-secondary">
+            <section class="col-3 bg-light">
               <div class="container" id="contact-info">
                 <h4>Contact Information</h4>
               </div>
@@ -71,7 +71,7 @@
           </div>
 
           <!-- Display contact location on map -->
-          <section class="col-12 border border-secondary">
+          <section class="col-12 bg-light">
             <div class="container" id="location-map">
               <h2>Map</h2>
             </div>
@@ -79,9 +79,20 @@
         </section>
 
         <!-- Form - Add new contact -->
-        <div>
-          <form class="d-none">
+        <div id="contact-information" class="d-none">
+          <form class=" bg-light">
             <h2>New Contact Information</h2>
+            <label for="first-name">First Name</label>
+            <input id="first-name"/>
+            <label for="last-name">Last Name</label>
+            <input id="last-name"/>
+            <label for="phone-number">Phone Number</label>
+            <input id="phone-number"/>
+            <label for="email">Email</label>
+            <input id="email"/>
+            <label for="address">Address</label>
+            <input id="address"/>
+            <button id="save-button">Save</button>
           </form>
         </div>
       </div>
