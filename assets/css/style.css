@@ -1,4 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#contacts {
+    margin: 20 20 20 20;
+    width: 100%;
+    background-color: grey;
+    background-size: cover;
+    position: left;
+}
+
+#contact-data {}
+
+#contact-info {}
+
+#weather {}
+
 #location-map {
     height: 500px;
     width: 100%;
 }
+
+
+footer {}
