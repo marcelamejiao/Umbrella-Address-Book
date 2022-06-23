@@ -1,7 +1,4 @@
-/* Set the size of the div element that contains the map */
 #location-map {
-    height: 400px;
-    /* The height is 400 pixels */
+    height: 500px;
     width: 100%;
-    /* The width is the width of the web page */
-  }
+}
