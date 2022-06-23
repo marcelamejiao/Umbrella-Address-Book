@@ -26,7 +26,6 @@ function checkWeather(lat, long) {
                         icon: data.current.condition.icon,
                         rain: data.current.condition.text.includes("rain")
                     };
-                    console.log(weather);
                     return (weather);
                 });
             } else {
