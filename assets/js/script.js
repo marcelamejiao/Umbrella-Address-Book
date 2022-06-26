@@ -62,6 +62,8 @@ function newContact() {
 
 function saveContact(event) {
     event.preventDefault();
+    $("#contact-information").addClass("d-none");
+
 }
 
 
