@@ -64,6 +64,22 @@ function saveContact(event) {
     event.preventDefault();
     $("#contact-information").addClass("d-none");
 
+    var firstNameValue = $("#first-name").val();
+    var lastNameValue = $("#last-name").val();
+    var phoneNumberValue = $("#phone-number").val();
+    var emailValue = $("#email").val();
+    var addressValue = $("#address").val();
+
+    var contact = {
+        firstName: firstNameValue,
+        lastName : lastNameValue,
+        phoneNumber : phoneNumberValue,
+        email : emailValue,
+        address : addressValue,
+    };
+
+    state.contacts.push(contact);
+    saveState();
 }
 
 
