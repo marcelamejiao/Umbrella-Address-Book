@@ -12,11 +12,11 @@
     position: left;
 }
 
-#contact-data {}
+/* #contact-data {} */
 
-#contact-info {}
+/* #contact-information {} */
 
-#weather {}
+/* #weather {} */
 
 #location-map {
     height: 500px;
@@ -24,4 +24,4 @@
 }
 
 
-footer {}
+/* footer {} */

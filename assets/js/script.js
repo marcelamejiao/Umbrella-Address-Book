@@ -119,6 +119,8 @@ function addressToMap(address){
         var lng = data.results[0].geometry.location.lng;
         // Calls the render map function based on the coordinates of the given address
         renderMap(lat,lng);
+        // Calls the check weather function based on the coordinates of the given address
+        checkWeather(lat, lng); ////
       })
 }
 
