@@ -22,6 +22,8 @@
     height: 500px;
     width: 100%;
 }
-
+header {
+    p: 20px;
+}
 
 footer {}
