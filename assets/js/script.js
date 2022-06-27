@@ -120,7 +120,7 @@ function addressToMap(address){
         // Calls the render map function based on the coordinates of the given address
         renderMap(lat,lng);
         // Calls the check weather function based on the coordinates of the given address
-        checkWeather(lat, lng);
+        checkWeather(lat, lng); ////
       })
 }
 
