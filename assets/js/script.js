@@ -44,7 +44,8 @@ var state = {
 function init () {
     // Load the state object from local storage
     loadState();
-
+    //Show the conctact list
+    renderContactList();
 
     $("#add-button").on("click",newContact);
     $("#save-button").on("click",saveContact);
@@ -52,7 +53,15 @@ function init () {
 }
 
 function renderContactList() {
+    var contactList = $("#contact-list ul");
 
+    for (var i= 0; i<state.contacts.length; i++){
+        var contact = state.contacts[i];
+       
+        var listItem = $("<li>"+contact.firstName+" "+contact.lastName+"</li>");
+        contactList.append(listItem);
+
+    }
 }
 
 function newContact() {
