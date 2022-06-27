@@ -83,20 +83,39 @@
 
         <!-- Form - Add new contact -->
         <div id="contact-information" class="d-none">
-          <form class=" bg-light">
+          <form class="bg-light">
             <h2>New Contact Information</h2>
             <label for="first-name">First Name</label>
-            <input id="first-name"/>
+            <input id="first-name" type="text"/>
             <label for="last-name">Last Name</label>
-            <input id="last-name"/>
+            <input id="last-name" type="text" />
             <label for="phone-number">Phone Number</label>
-            <input id="phone-number"/>
+            <input id="phone-number" type="text"/>
             <label for="email">Email</label>
-            <input id="email"/>
+            <input id="email" type="text"/>
             <label for="address">Address</label>
-            <input id="address"/>
-            <button id="save-button">Save</button>
+            <input id="address" type="text"/>
+            <input id="save-button" type="submit" value="Save" />
           </form>
+        </div>
+
+        <div id="validationModal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Validation Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Please fill in all contact fields.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <footer>
@@ -111,6 +130,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTT
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
     <script src="./assets/js/script.js"></script>
 
   </body>

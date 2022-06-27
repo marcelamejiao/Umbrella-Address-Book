@@ -12,6 +12,10 @@
     position: left;
 }
 
+#contact-list ul {
+    list-style-type: none;
+}
+
 #contact-data {}
 
 #contact-info {}

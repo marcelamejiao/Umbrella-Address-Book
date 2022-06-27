@@ -58,10 +58,13 @@ function renderContactList() {
     for (var i= 0; i<state.contacts.length; i++){
         var contact = state.contacts[i];
        
-        var listItem = $("<li>"+contact.firstName+" "+contact.lastName+"</li>");
-        contactList.append(listItem);
+        var listItem = $("<li><span>"+contact.firstName+" "+contact.lastName+"</span><button data-number='"+i+"'>X</button></li>");
 
+
+        contactList.append(listItem);
     }
+
+    $("#contact-list li button").on("click",deleteContact);
 }
 
 function newContact() {
@@ -70,14 +73,21 @@ function newContact() {
 }
 
 function saveContact(event) {
+    // Stop the page from refreshing
     event.preventDefault();
-    $("#contact-information").addClass("d-none");
 
     var firstNameValue = $("#first-name").val();
     var lastNameValue = $("#last-name").val();
     var phoneNumberValue = $("#phone-number").val();
     var emailValue = $("#email").val();
     var addressValue = $("#address").val();
+
+    // If any of the fields are empty, don't save the contact
+    if (firstNameValue === "" || lastNameValue === "" || phoneNumberValue === "" || emailValue === "" || addressValue === "") {
+        // Show a modal to say "enter all fields"
+        $('#validationModal').modal();
+        return;
+    }
 
     var contact = {
         firstName: firstNameValue,
@@ -89,8 +99,18 @@ function saveContact(event) {
 
     state.contacts.push(contact);
     saveState();
+
+    $("#contact-information").addClass("d-none");
+
+    renderContactList();
 }
 
+function deleteContact(event){
+    event.preventDefault();
+    var button = event.target;
+
+    
+}
 
 function loadState() {
     var json = localStorage.getItem("umbrella-address-book");
