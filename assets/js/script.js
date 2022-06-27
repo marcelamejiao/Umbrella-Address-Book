@@ -44,7 +44,8 @@ var state = {
 function init () {
     // Load the state object from local storage
     loadState();
-
+    //Show the conctact list
+    renderContactList();
 
     $("#add-button").on("click",newContact);
     $("#save-button").on("click",saveContact);
@@ -52,7 +53,15 @@ function init () {
 }
 
 function renderContactList() {
+    var contactList = $("#contact-list ul");
 
+    for (var i= 0; i<state.contacts.length; i++){
+        var contact = state.contacts[i];
+       
+        var listItem = $("<li>"+contact.firstName+" "+contact.lastName+"</li>");
+        contactList.append(listItem);
+
+    }
 }
 
 function newContact() {
@@ -62,6 +71,24 @@ function newContact() {
 
 function saveContact(event) {
     event.preventDefault();
+    $("#contact-information").addClass("d-none");
+
+    var firstNameValue = $("#first-name").val();
+    var lastNameValue = $("#last-name").val();
+    var phoneNumberValue = $("#phone-number").val();
+    var emailValue = $("#email").val();
+    var addressValue = $("#address").val();
+
+    var contact = {
+        firstName: firstNameValue,
+        lastName : lastNameValue,
+        phoneNumber : phoneNumberValue,
+        email : emailValue,
+        address : addressValue,
+    };
+
+    state.contacts.push(contact);
+    saveState();
 }
 
 
