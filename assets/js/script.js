@@ -65,6 +65,7 @@ function init() {
 function renderContactList() {
     // Defines contactList
     var contactList = $("#contact-list ul");
+    contactList.html("");
     // loops through all items in local storage
     for (var i = 0; i < state.contacts.length; i++) {
         // Defines the contact of current itteration
@@ -73,14 +74,12 @@ function renderContactList() {
         var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
         // assigns their address to the attribute data-address
         listItem.attr('data-address', state.contacts[i].address);
-        // assigns their contact index to their index in local storage to allow functions to grab the correct info
+        // Assigns their contact index to their index in local storage to allow functions to grab the correct info
         listItem.attr('data-contact-index', i);
-        // Creares a new button -  a delete button
+        // Creates a new button -  a delete button
         var deleteButton = $("<button>X</button>");
-        //
+        // Assigns their contact index to their index
         deleteButton.attr('data-contact-index', i);
-        // adds id of delete-button to delete button
-        deleteButton.attr('id', 'delete-button');
         // Appends delete button to contact button/li
         listItem.append(deleteButton);
         // Appends li and buttons to the contact List
@@ -89,10 +88,9 @@ function renderContactList() {
         listItem.on('click', callAllFunctions);
         // Adds event listener to delete buttons to delete contact info
         deleteButton.on('click', deleteContact);
+        // Appends listItem to contact ul 
         contactList.append(listItem);
     }
-
-    $("#contact-list li button").on("click", deleteContact);
 }
 
 function callAllFunctions() {
@@ -105,7 +103,6 @@ function deleteContact() {
     state.contacts.splice(contactIndex, 1);
     saveState();
     renderContactList();
-    // Still buggy when deleting. Have to refresh for it to show deleted.
 }
 
 function newContact() {
@@ -148,13 +145,6 @@ function saveContact(event) {
 
     $("#contact-information").modal("hide");
     renderContactList();
-}
-
-function deleteContact(event) {
-    event.preventDefault();
-    var button = event.target;
-
-
 }
 
 function loadState() {
