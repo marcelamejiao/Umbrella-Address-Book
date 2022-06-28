@@ -49,8 +49,6 @@ function init () {
 
     $("#add-button").on("click",newContact);
     $("#save-button").on("click",saveContact);
-    $("#delete-button").on("click",deleteContact);
-    $("#delete-button").on("click",deleteContact);
 }
 
 function renderContactList() {
@@ -58,15 +56,23 @@ function renderContactList() {
     var contactList = $("#contact-list ul");
     // loops through all items in local storage
     for (var i= 0; i<state.contacts.length; i++){
+        // Defines the contact of current itteration
         var contact = state.contacts[i];
-       
+        // Creates a new button in list with contacts first and last name
         var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
+        // assigns their address to the attribute data-address
         listItem.attr('data-address',state.contacts[i].address);
+        // assigns their contact index to their index in local storage to allow functions to grab the correct info
         listItem.attr('data-contact-index',i);
+        // Creares a new button -  a delete button
         var deleteButton = $("<button>X</button>");
+        // adds id of delete-button to delete button
         deleteButton.attr('id','delete-button');
+        // Appends delete button to contact button/li
         listItem.append(deleteButton);
+        // Appends li and buttons to the contact List
         contactList.append(listItem);
+        // Adds event listener to contact buttons to call all functions to display info
         listItem.on('click',callAllFunctions);
 
     }
@@ -78,8 +84,8 @@ function callAllFunctions () {
 }
 
 function deleteContact(contactIndex) {
-    alert();
-    state.contacts.splice(contactIndex,1);
+    // state.contacts.splice(contactIndex,1);
+    console.log(state.contacts.splice(contactIndex,1));
 }
 
 function newContact() {
