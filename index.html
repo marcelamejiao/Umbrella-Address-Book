@@ -28,77 +28,99 @@
     <title>Umbrella</title>
   </head>
 
-  <body>
+  <body class="bg-dark">
     <header class="bg-dark text-light text-center">
       <h1>Umbrella</h1>
-      <p>An address book to find my friends, join them and see the current weather.</p>
+      <p class="m-0">An address book to find my friends, join them and see the current weather.</p>
     </header>
 
     <main>
-      <div class="d-flex flex-row">
+      <div class="container">
+      <div class="d-flex flex-row gx-0 h-100">
         <!-- Contacts section -->
-        <section id="contacts" class="d-flex flex-column bg-light col-5">        
+        <section id="contacts" class="d-flex flex-column col-5 bg-light p-0">
+            <div class="d-flex justify-content-between py-3 px-2 bg-secondary align-items-center" > 
+              <h5></h5>
+              <h5 class="h6 text-light m-0">Contacts</h5>
+             <span class="border-light border bg-transparent px-2 py-0 text-light d-inline-block" id="basic-addon2">+</span>
+            </div>      
             <div class="d-flex flex-row">
               <div class="col-11">
-                <h2 class= "bg-dark text-light">Contacts</h2>
               </div>
               <div class="col-1">
-                <button id="add-button">+</button>
               </div>
             </div>
             <div>
-              <section id="contact-list">
-              <h3>Contact List</h3>
-              <ul>
+              <section id="contact-list p-2 bg-light">
+              <ul class="p-2"> 
+                <li class="p-2 border border-secondary rounded">
+                <div class="d-flex justify-content-between">
+                <p class="m-0"></p>
+                <button class="d-flex justify-content-center btn rounded text-dark px-3 m-0 border-secondary h4">&times;</button>
+              </div>
+              </li>
               <!-- href or buttons created from javascript function? AB/SW-->
               </ul>
             </section>
             </div>
         </section>
 
-        <section id="contact-data" class="bg-light d-flex flex-column col-7">
-          <div class="d-flex flex-row">
+        <section id="contact-data" class="bg-white col-7 p-3">
+          <div>
             <!-- Display current contact weather -->
-            <section class="col-9 border border-secondary">
+
+            <section class="col-9 border border-secondary d-none">
               <div id="weather" class="container" >
                 <h2>Weather</h2>
               </div>
             </section>
 
             <!-- Current contact information -->
-            <section class="col-3 bg-light">
+            <section class="text-center bg-secondary text-light py-3 w-100">
               <div class="container" id="contact-info">
-                <h4>Contact Information</h4>
+                <h4 class="h3 m-0">New Contact Information</h4>
               </div>
             </section>
           </div>
 
           <!-- Display contact location on map -->
-          <section class="col-12 border border-secondary">
+          <section class="col-12 border border-secondary d-none">
             <div id="location-map" class="container" >
               <h2>Map</h2>
             </div>
           </section>
-        </section>
+       
 
         <!-- Form - Add new contact -->
-        <div id="contact-information" class="d-none">
-          <form class=" bg-light">
-            <h2>New Contact Information</h2>
+        <div id="contact-information" class="">
+          <form class=" bg-light py-4 px-4">
+            <div class="row">
+            <div class="col-6">
             <label for="first-name">First Name</label>
-            <input id="first-name"/>
+            <input class="form-control" id="first-name"/>
+          </div>
+          <div class="col-6">
             <label for="last-name">Last Name</label>
-            <input id="last-name"/>
+            <input class="form-control" id="last-name"/>
+          </div> <div class="col-6 my-4">
             <label for="phone-number">Phone Number</label>
-            <input id="phone-number"/>
+            <input class="form-control" id="phone-number"/>
+          </div> <div class="col-6 my-4">
             <label for="email">Email</label>
-            <input id="email"/>
+            <input class="form-control" id="email"/>
+          </div> <div class="col-12">
             <label for="address">Address</label>
-            <input id="address"/>
-            <button id="save-button">Save</button>
+            <input class="form-control" id="address"/>
+          </div>
+          <div class="col-12 mt-3 d-flex justify-content-center">
+            <button id="save-button" class="btn btn-secondary">Save</button>
+          </div>
+          </div>
           </form>
         </div>
+      </section>
       </div>
+    
       <footer>
         <p>Copyright 2022</p>
       </footer>
