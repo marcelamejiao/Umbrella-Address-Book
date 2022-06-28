@@ -76,9 +76,15 @@ function renderContactList() {
         contactList.append(listItem);
         // Adds event listener to contact buttons to call all functions to display info
         listItem.on('click',callAllFunctions);
+<<<<<<< HEAD
         // Adds event listener to delete buttons to delete contact info
         deleteButton.on('click', deleteContact);
+=======
+        contactList.append(listItem);
+>>>>>>> e6c6782fa1788272d1ab8fdd16326753a90a45ac
     }
+
+    $("#contact-list li button").on("click",deleteContact);
 }
 
 function callAllFunctions () {
@@ -99,8 +105,8 @@ function newContact() {
 }
 
 function saveContact(event) {
+    // Stop the page from refreshing
     event.preventDefault();
-    $("#contact-information").addClass("d-none");
 
     var firstNameValue = $("#first-name").val();
     var lastNameValue = $("#last-name").val();
@@ -114,6 +120,12 @@ function saveContact(event) {
         $('#validationModal').modal("show");
         return;
     }
+        // Resert the form 
+        $("#first-name").val("");
+        $("#last-name").val("");
+        $("#phone-number").val("");
+        $("#email").val("");
+        $("#address").val("");
 
     var contact = {
         firstName: firstNameValue,
@@ -130,6 +142,12 @@ function saveContact(event) {
     renderContactList();
 }
 
+function deleteContact(event){
+    event.preventDefault();
+    var button = event.target;
+
+    
+}
 
 function loadState() {
     var json = localStorage.getItem("umbrella-address-book");
