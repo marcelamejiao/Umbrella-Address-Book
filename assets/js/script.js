@@ -54,6 +54,7 @@ function init () {
 
 function renderContactList() {
     var contactList = $("#contact-list ul");
+    contactList.empty();
 
     for (var i= 0; i<state.contacts.length; i++){
         var contact = state.contacts[i];
