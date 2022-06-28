@@ -65,6 +65,7 @@ function init() {
 function renderContactList() {
     // Defines contactList
     var contactList = $("#contact-list ul");
+    contactList.html("");
     // loops through all items in local storage
     for (var i = 0; i < state.contacts.length; i++) {
         // Defines the contact of current itteration
@@ -91,8 +92,6 @@ function renderContactList() {
         deleteButton.on('click', deleteContact);
         contactList.append(listItem);
     }
-
-    $("#contact-list li button").on("click", deleteContact);
 }
 
 function callAllFunctions() {
