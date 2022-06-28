@@ -49,19 +49,37 @@ function init () {
 
     $("#add-button").on("click",newContact);
     $("#save-button").on("click",saveContact);
-
+    $("#delete-button").on("click",deleteContact);
+    $("#delete-button").on("click",deleteContact);
 }
 
 function renderContactList() {
+    // Defines contactList
     var contactList = $("#contact-list ul");
-
+    // loops through all items in local storage
     for (var i= 0; i<state.contacts.length; i++){
         var contact = state.contacts[i];
        
-        var listItem = $("<li>"+contact.firstName+" "+contact.lastName+"</li>");
+        var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
+        listItem.attr('data-address',state.contacts[i].address);
+        listItem.attr('data-contact-index',i);
+        var deleteButton = $("<button>X</button>");
+        deleteButton.attr('id','delete-button');
+        listItem.append(deleteButton);
         contactList.append(listItem);
+        listItem.on('click',callAllFunctions);
 
     }
+}
+
+function callAllFunctions () {
+    var address = $(this).attr('data-address');
+    addressToMap(address);
+}
+
+function deleteContact(contactIndex) {
+    alert();
+    state.contacts.splice(contactIndex,1);
 }
 
 function newContact() {
@@ -115,6 +133,10 @@ function saveState() {
     localStorage.setItem("umbrella-address-book", json);
 }
 
+// function renderContactInformation(contactIndex) {
+    
+//     var nameHeading = $("<");
+
 // Rendering a map from Google Maps API
 
 // Converts address to Lat and Long values and renders Map
@@ -129,7 +151,7 @@ function addressToMap(address){
         // Calls the render map function based on the coordinates of the given address
         renderMap(lat,lng);
         // Calls the check weather function based on the coordinates of the given address
-        checkWeather(lat, lng); ////
+        checkWeather(lat, lng);
       })
 }
 
