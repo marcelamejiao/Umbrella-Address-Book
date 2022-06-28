@@ -66,43 +66,43 @@ function renderContactList() {
     // Defines contactList
     var contactList = $("#contact-list ul");
     // loops through all items in local storage
-    for (var i= 0; i<state.contacts.length; i++){
+    for (var i = 0; i < state.contacts.length; i++) {
         // Defines the contact of current itteration
         var contact = state.contacts[i];
         // Creates a new button in list with contacts first and last name
         var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
         // assigns their address to the attribute data-address
-        listItem.attr('data-address',state.contacts[i].address);
+        listItem.attr('data-address', state.contacts[i].address);
         // assigns their contact index to their index in local storage to allow functions to grab the correct info
-        listItem.attr('data-contact-index',i);
+        listItem.attr('data-contact-index', i);
         // Creares a new button -  a delete button
         var deleteButton = $("<button>X</button>");
         //
-        deleteButton.attr('data-contact-index',i);
+        deleteButton.attr('data-contact-index', i);
         // adds id of delete-button to delete button
-        deleteButton.attr('id','delete-button');
+        deleteButton.attr('id', 'delete-button');
         // Appends delete button to contact button/li
         listItem.append(deleteButton);
         // Appends li and buttons to the contact List
         contactList.append(listItem);
         // Adds event listener to contact buttons to call all functions to display info
-        listItem.on('click',callAllFunctions);
+        listItem.on('click', callAllFunctions);
         // Adds event listener to delete buttons to delete contact info
         deleteButton.on('click', deleteContact);
         contactList.append(listItem);
     }
 
-    $("#contact-list li button").on("click",deleteContact);
+    $("#contact-list li button").on("click", deleteContact);
 }
 
-function callAllFunctions () {
+function callAllFunctions() {
     var address = $(this).attr('data-address');
     addressToMap(address);
 }
 
 function deleteContact() {
     var contactIndex = $(this).attr('data-contact-index');
-    state.contacts.splice(contactIndex,1);
+    state.contacts.splice(contactIndex, 1);
     saveState();
     renderContactList();
     // Still buggy when deleting. Have to refresh for it to show deleted.
@@ -128,12 +128,12 @@ function saveContact(event) {
         $('#validationModal').modal("show");
         return;
     }
-        // Resert the form 
-        $("#first-name").val("");
-        $("#last-name").val("");
-        $("#phone-number").val("");
-        $("#email").val("");
-        $("#address").val("");
+    // Resert the form 
+    $("#first-name").val("");
+    $("#last-name").val("");
+    $("#phone-number").val("");
+    $("#email").val("");
+    $("#address").val("");
 
     var contact = {
         firstName: firstNameValue,
@@ -150,11 +150,11 @@ function saveContact(event) {
     renderContactList();
 }
 
-function deleteContact(event){
+function deleteContact(event) {
     event.preventDefault();
     var button = event.target;
 
-    
+
 }
 
 function loadState() {
@@ -172,7 +172,7 @@ function saveState() {
 }
 
 // function renderContactInformation(contactIndex) {
-    
+
 //     var nameHeading = $("<");
 
 // Rendering a map from Google Maps API
@@ -181,16 +181,16 @@ function saveState() {
 function addressToMap(address) {
     // API call to geocode the address. Added my API in the function instead of global variable to reduce merge conflicts
     fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + '&key=' + "AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A")
-      .then(response => response.json())
-      .then(data => {
-        // Gets the address longitude and latitude coordinates
-        var lat = data.results[0].geometry.location.lat;
-        var lng = data.results[0].geometry.location.lng;
-        // Calls the render map function based on the coordinates of the given address
-        renderMap(lat,lng);
-        // Calls the check weather function based on the coordinates of the given address
-        checkWeather(lat, lng);
-      })
+        .then(response => response.json())
+        .then(data => {
+            // Gets the address longitude and latitude coordinates
+            var lat = data.results[0].geometry.location.lat;
+            var lng = data.results[0].geometry.location.lng;
+            // Calls the render map function based on the coordinates of the given address
+            renderMap(lat, lng);
+            // Calls the check weather function based on the coordinates of the given address
+            checkWeather(lat, lng);
+        })
 }
 
 // Initialize and add the map
