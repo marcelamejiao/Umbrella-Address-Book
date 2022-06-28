@@ -12,7 +12,11 @@
     position: left;
 }
 
-/* #contact-data {} */
+#contact-list ul {
+    list-style-type: none;
+}
+
+#contact-data {}
 
 /* #contact-information {} */
 
