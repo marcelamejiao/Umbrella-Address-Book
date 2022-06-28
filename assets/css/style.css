@@ -12,16 +12,28 @@
     position: left;
 }
 
+#contact-list ul {
+    list-style-type: none;
+}
+
 #contact-data {}
 
-#contact-info {}
+/* #contact-information {} */
 
-#weather {}
+/* #weather {} */
 
 #location-map {
     height: 500px;
     width: 100%;
 }
 
+ul {
+    list-style-type: none;
+}
 
-footer {}
+button {
+    padding: 5px;
+}
+
+
+/* footer {} */
