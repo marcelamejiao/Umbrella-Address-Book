@@ -63,7 +63,22 @@ The main issue we experienced when working on the logic that would display the m
 
 
 ### Weather API:
+The WeatherAPI function calls the weatherAPI, which returns a JSON object with weather data. 
+The checkWeather function requires two arguments; Latitude and Longitude which is called in the query.
+From the returned data, we collect the current Temperature in celsius and the current weather icon URL.
+A check is performed on the condition attribute if this text contains the word "rain" and then flags Rain as true or false. 
 
+A series of conditional statements is run to assign an image based off temperature:
+* below 16 degrees C, uses a snowflake image
+* Between 16 degrees and 24 degrees a jacket image
+* Between 24 degrees and 32 degrees a t-shirt image
+* Greater than 32 degrees a flame image. 
+
+A further conditional statement checks if 'Rain' is true, and will also append an Umbrella Icon. 
+
+A string is created combining the above information, as Temperature, an icon for the general condition, the image representing the temperature conditional and then the umbrella Icon is displayed if required. 
+
+On the index.html page, the element (div) with id 'weather' is then assigned the html from the created string  which will display the data collected above.
 
 
 ### Website functionality
