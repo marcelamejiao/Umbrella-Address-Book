@@ -49,23 +49,52 @@ function init () {
 
     $("#add-button").on("click",newContact);
     $("#save-button").on("click",saveContact);
-
 }
 
 function renderContactList() {
+    // Defines contactList
     var contactList = $("#contact-list ul");
-    contactList.empty();
-
+    // loops through all items in local storage
     for (var i= 0; i<state.contacts.length; i++){
+        // Defines the contact of current itteration
         var contact = state.contacts[i];
-       
-        var listItem = $("<li><span>"+contact.firstName+" "+contact.lastName+"</span><button data-number='"+i+"'>X</button></li>");
-
-
+        // Creates a new button in list with contacts first and last name
+        var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
+        // assigns their address to the attribute data-address
+        listItem.attr('data-address',state.contacts[i].address);
+        // assigns their contact index to their index in local storage to allow functions to grab the correct info
+        listItem.attr('data-contact-index',i);
+        // Creares a new button -  a delete button
+        var deleteButton = $("<button>X</button>");
+        //
+        deleteButton.attr('data-contact-index',i);
+        // adds id of delete-button to delete button
+        deleteButton.attr('id','delete-button');
+        // Appends delete button to contact button/li
+        listItem.append(deleteButton);
+        // Appends li and buttons to the contact List
+        contactList.append(listItem);
+        // Adds event listener to contact buttons to call all functions to display info
+        listItem.on('click',callAllFunctions);
+        // Adds event listener to delete buttons to delete contact info
+        deleteButton.on('click', deleteContact);
         contactList.append(listItem);
     }
 
     $("#contact-list li button").on("click",deleteContact);
+}
+
+function callAllFunctions () {
+    var address = $(this).attr('data-address');
+    addressToMap(address);
+}
+
+function deleteContact() {
+    var contactIndex = $(this).attr('data-contact-index');
+    state.contacts.splice(contactIndex,1);
+    saveState();
+    renderContactList();
+    // Still buggy when deleting. Have to refresh for it to show deleted.
 }
 
 function newContact() {
@@ -131,6 +160,10 @@ function saveState() {
     localStorage.setItem("umbrella-address-book", json);
 }
 
+// function renderContactInformation(contactIndex) {
+    
+//     var nameHeading = $("<");
+
 // Rendering a map from Google Maps API
 
 // Converts address to Lat and Long values and renders Map
@@ -145,7 +178,7 @@ function addressToMap(address){
         // Calls the render map function based on the coordinates of the given address
         renderMap(lat,lng);
         // Calls the check weather function based on the coordinates of the given address
-        checkWeather(lat, lng); ////
+        checkWeather(lat, lng);
       })
 }
 
