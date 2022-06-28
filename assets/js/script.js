@@ -70,7 +70,6 @@ function newContact() {
 
 function saveContact(event) {
     event.preventDefault();
-    $("#contact-information").addClass("d-none");
 
     var firstNameValue = $("#first-name").val();
     var lastNameValue = $("#last-name").val();
