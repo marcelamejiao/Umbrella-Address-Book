@@ -65,8 +65,7 @@ function renderContactList() {
 }
 
 function newContact() {
-    
-    $("#contact-information").removeClass("d-none");
+    $("#contact-information").modal("show");
 }
 
 function saveContact(event) {
@@ -79,6 +78,13 @@ function saveContact(event) {
     var emailValue = $("#email").val();
     var addressValue = $("#address").val();
 
+    // If any of the fields are empty, don't save the contact
+    if (firstNameValue === "" || lastNameValue === "" || phoneNumberValue === "" || emailValue === "" || addressValue === "") {
+        // Show a modal to say "enter all fields"
+        $('#validationModal').modal("show");
+        return;
+    }
+
     var contact = {
         firstName: firstNameValue,
         lastName : lastNameValue,
@@ -89,6 +95,9 @@ function saveContact(event) {
 
     state.contacts.push(contact);
     saveState();
+
+    $("#contact-information").modal("hide");
+    renderContactList();
 }
 
 
