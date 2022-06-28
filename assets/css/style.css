@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -12,16 +12,20 @@
     position: left;
 }
 
+<<<<<<< HEAD
 .container >div >section  {
     min-height: 100vh;
 }
 
 
 #contact-data {}
+=======
+/* #contact-data {} */
+>>>>>>> 4e67ce1684ada3718839784391ba25e870612b95 */
 
-#contact-info {}
+/* #contact-information {} */
 
-#weather {}
+/* #weather {} */
 
 #location-map {
     height: 500px;
@@ -29,4 +33,4 @@
 }
 
 
-footer {}
+/* footer {} */

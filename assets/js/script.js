@@ -44,7 +44,8 @@ var state = {
 function init () {
     // Load the state object from local storage
     loadState();
-
+    //Show the conctact list
+    renderContactList();
 
     $("#add-button").on("click",newContact);
     $("#save-button").on("click",saveContact);
@@ -52,16 +53,51 @@ function init () {
 }
 
 function renderContactList() {
+    var contactList = $("#contact-list ul");
 
+    for (var i= 0; i<state.contacts.length; i++){
+        var contact = state.contacts[i];
+       
+        var listItem = $("<li>"+contact.firstName+" "+contact.lastName+"</li>");
+        contactList.append(listItem);
+
+    }
 }
 
 function newContact() {
-    
-    $("#contact-information").removeClass("d-none");
+    $("#contact-information").modal("show");
 }
 
 function saveContact(event) {
     event.preventDefault();
+    $("#contact-information").addClass("d-none");
+
+    var firstNameValue = $("#first-name").val();
+    var lastNameValue = $("#last-name").val();
+    var phoneNumberValue = $("#phone-number").val();
+    var emailValue = $("#email").val();
+    var addressValue = $("#address").val();
+
+    // If any of the fields are empty, don't save the contact
+    if (firstNameValue === "" || lastNameValue === "" || phoneNumberValue === "" || emailValue === "" || addressValue === "") {
+        // Show a modal to say "enter all fields"
+        $('#validationModal').modal("show");
+        return;
+    }
+
+    var contact = {
+        firstName: firstNameValue,
+        lastName : lastNameValue,
+        phoneNumber : phoneNumberValue,
+        email : emailValue,
+        address : addressValue,
+    };
+
+    state.contacts.push(contact);
+    saveState();
+
+    $("#contact-information").modal("hide");
+    renderContactList();
 }
 
 
@@ -92,6 +128,8 @@ function addressToMap(address){
         var lng = data.results[0].geometry.location.lng;
         // Calls the render map function based on the coordinates of the given address
         renderMap(lat,lng);
+        // Calls the check weather function based on the coordinates of the given address
+        checkWeather(lat, lng); ////
       })
 }
 
