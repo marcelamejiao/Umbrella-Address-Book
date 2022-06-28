@@ -12,16 +12,19 @@
     position: left;
 }
 
-<<<<<<< HEAD
 .container >div >section  {
     min-height: 100vh;
 }
 
 
+#contact-data 
+/* #contact-data {} *
+#contact-list ul {
+    list-style-type: none;
+}
+
 #contact-data {}
-=======
-/* #contact-data {} */
->>>>>>> 4e67ce1684ada3718839784391ba25e870612b95 */
+
 
 /* #contact-information {} */
 

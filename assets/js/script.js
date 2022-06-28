@@ -54,14 +54,18 @@ function init () {
 
 function renderContactList() {
     var contactList = $("#contact-list ul");
+    contactList.empty();
 
     for (var i= 0; i<state.contacts.length; i++){
         var contact = state.contacts[i];
        
-        var listItem = $("<li>"+contact.firstName+" "+contact.lastName+"</li>");
-        contactList.append(listItem);
+        var listItem = $("<li><span>"+contact.firstName+" "+contact.lastName+"</span><button data-number='"+i+"'>X</button></li>");
 
+
+        contactList.append(listItem);
     }
+
+    $("#contact-list li button").on("click",deleteContact);
 }
 
 function newContact() {
@@ -69,8 +73,8 @@ function newContact() {
 }
 
 function saveContact(event) {
+    // Stop the page from refreshing
     event.preventDefault();
-    $("#contact-information").addClass("d-none");
 
     var firstNameValue = $("#first-name").val();
     var lastNameValue = $("#last-name").val();
@@ -84,6 +88,12 @@ function saveContact(event) {
         $('#validationModal').modal("show");
         return;
     }
+        // Resert the form 
+        $("#first-name").val("");
+        $("#last-name").val("");
+        $("#phone-number").val("");
+        $("#email").val("");
+        $("#address").val("");
 
     var contact = {
         firstName: firstNameValue,
@@ -100,6 +110,12 @@ function saveContact(event) {
     renderContactList();
 }
 
+function deleteContact(event){
+    event.preventDefault();
+    var button = event.target;
+
+    
+}
 
 function loadState() {
     var json = localStorage.getItem("umbrella-address-book");
