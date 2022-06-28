@@ -88,6 +88,12 @@ function saveContact(event) {
         $('#validationModal').modal("show");
         return;
     }
+        // Resert the form 
+        $("#first-name").val("");
+        $("#last-name").val("");
+        $("#phone-number").val("");
+        $("#email").val("");
+        $("#address").val("");
 
     var contact = {
         firstName: firstNameValue,
