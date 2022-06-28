@@ -66,6 +66,8 @@ function renderContactList() {
         listItem.attr('data-contact-index',i);
         // Creares a new button -  a delete button
         var deleteButton = $("<button>X</button>");
+        //
+        deleteButton.attr('data-contact-index',i);
         // adds id of delete-button to delete button
         deleteButton.attr('id','delete-button');
         // Appends delete button to contact button/li
@@ -74,7 +76,8 @@ function renderContactList() {
         contactList.append(listItem);
         // Adds event listener to contact buttons to call all functions to display info
         listItem.on('click',callAllFunctions);
-
+        // Adds event listener to delete buttons to delete contact info
+        deleteButton.on('click', deleteContact);
     }
 }
 
@@ -83,9 +86,12 @@ function callAllFunctions () {
     addressToMap(address);
 }
 
-function deleteContact(contactIndex) {
-    // state.contacts.splice(contactIndex,1);
-    console.log(state.contacts.splice(contactIndex,1));
+function deleteContact() {
+    var contactIndex = $(this).attr('data-contact-index');
+    state.contacts.splice(contactIndex,1);
+    saveState();
+    renderContactList();
+    // Still buggy when deleting. Have to refresh for it to show deleted.
 }
 
 function newContact() {
