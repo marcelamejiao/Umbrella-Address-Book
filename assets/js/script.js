@@ -76,12 +76,9 @@ function renderContactList() {
         contactList.append(listItem);
         // Adds event listener to contact buttons to call all functions to display info
         listItem.on('click',callAllFunctions);
-<<<<<<< HEAD
         // Adds event listener to delete buttons to delete contact info
         deleteButton.on('click', deleteContact);
-=======
         contactList.append(listItem);
->>>>>>> e6c6782fa1788272d1ab8fdd16326753a90a45ac
     }
 
     $("#contact-list li button").on("click",deleteContact);
