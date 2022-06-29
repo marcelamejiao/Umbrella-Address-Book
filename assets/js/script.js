@@ -170,7 +170,7 @@ function saveState() {
 // Converts address to Lat and Long values and renders Map
 function addressToMap(address) {
     // API call to geocode the address. Added my API in the function instead of global variable to reduce merge conflicts
-    fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + '&key=' + "AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A")
+    fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(address) + '&key=' + "AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A")
         .then(response => response.json())
         .then(data => {
             // Gets the address longitude and latitude coordinates
