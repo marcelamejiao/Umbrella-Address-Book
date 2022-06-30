@@ -10,9 +10,30 @@
     background-color: grey;
     background-size: cover;
     position: left;
-    min-height: 100vh;
 }
 
 #contact-list ul {
     list-style-type: none;
 }
+
+#contact-data {}
+
+/* #contact-information {} */
+
+/* #weather {} */
+
+#location-map {
+    height: 500px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    padding: 5px;
+}
+
+
+/* footer {} */

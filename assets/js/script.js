@@ -71,13 +71,13 @@ function renderContactList() {
         // Defines the contact of current itteration
         var contact = state.contacts[i];
         // Creates a new button in list with contacts first and last name
-        var listItem = $("<li class='p-2 border border-secondary rounded d-flex justify-content-between'><p class='border-0 bg-light m-0'>" + contact.firstName + " " + contact.lastName + "</p></li>");
+        var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
         // assigns their address to the attribute data-address
         listItem.attr('data-address', state.contacts[i].address);
         // Assigns their contact index to their index in local storage to allow functions to grab the correct info
         listItem.attr('data-contact-index', i);
         // Creates a new button -  a delete button
-        var deleteButton = $("<button class='d-flex justify-content-center btn rounded text-dark px-3 m-0 border-secondary h4'>&times;</button>");
+        var deleteButton = $("<button>X</button>");
         // Assigns their contact index to their index
         deleteButton.attr('data-contact-index', i);
         // Appends delete button to contact button/li
