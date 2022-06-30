@@ -54,6 +54,11 @@ When I click on that contact, I am taken to a map displaying there location and 
 ## HTML and Javascript
 (insert work milestones and key concepts of journey)
 
+### Create, save contact list in local storage and render it on the screen:
+
+The function init Load the state object from local storage and show the contact list.
+
+
 
 ### Google Maps API:
 
