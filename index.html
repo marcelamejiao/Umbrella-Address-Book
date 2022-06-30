@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+g<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -31,100 +31,109 @@
   <body>
     <header class="bg-dark text-light text-center">
       <h1>Umbrella</h1>
-      <p>An address book to find my friends, join them and see the current weather.</p>
+      <p class="m-0">An address book to find my friends, join them and see the current weather.</p>
     </header>
 
     <main>
-      <div class="d-flex flex-row">
-        <!-- Contacts section -->
-        <section id="contacts" class="d-flex flex-column bg-light col-5">        
-            <div class="d-flex flex-row">
-              <div class="col-11">
-                <h2 class= "bg-dark text-light">Contacts</h2>
+        <div class="container bg-dark"></div>
+        <div class="d-flex flex-row gx-0 h-100 pt-2 px-5 bg-white">
+          <!-- Contacts section -->
+          <section id="contacts" class="d-flex flex-column col-5 bg-light p-0">
+              <div class="d-flex justify-content-between py-3 px-2 bg-secondary align-items-center" > 
+                <h5></h5>
+                <h5 class="h6 text-light m-0">Contacts</h5>
+               <span class="border-light border bg-transparent px-2 py-0 text-light d-inline-block" data-toggle="modal" data-target="#contact-information" id="basic-addon2">+</span>
+              </div>      
+              <div class="d-flex flex-row">
+                <div class="col-11">
+                </div>
+                <div class="col-1">
+                </div>
               </div>
-              <div class="col-1">
-                <button id="add-button">+</button>
-              </div>
-            </div>
-            <div>
-              <section id="contact-list">
-                <h3>Contact List</h3>
-                <ul>
+              <div>
+                <section id="contact-list" class="bg-light">
+                <ul class="p-2"> 
+                  <li class="p-2 border border-secondary rounded">
+                  <div class="d-flex justify-content-between">
+                  <p class="m-0"></p>
+                  <button class="d-flex justify-content-center btn rounded text-dark px-3 m-0 border-secondary h4">&times;</button>
+                </div>
+                </li>
                 <!-- href or buttons created from javascript function? AB/SW-->
                 </ul>
-            </section>
-            </div>
-        </section>
-
-        <section id="contact-data" class="bg-light d-flex flex-column col-7">
-          <div class="d-flex flex-row">
-            <!-- Display current contact weather -->
-            <section class="col-9 border border-secondary">
-              <div id="weather" class="container" >
-                <h2>Weather</h2>
+              </section>
               </div>
-            </section>
-
-            <!-- Current contact information -->
-            <section class="col-3 bg-light">
-              <div class="container" id="contact-info">
-                <h4>Contact Information</h4>
-              </div>
-            </section>
-          </div>
-
-          <!-- Display contact location on map -->
-          <section class="col-12 border border-secondary">
-            <div id="location-map" class="container" >
-              <h2>Map</h2>
-            </div>
           </section>
-        </section>
 
-           <!-- Form - Add new contact -->
-           <div id="contact-information" class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h3 class="modal-title">New Contact Information</h3>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+          <section id="contact-data" class="bg-white d-none flex-column col-7 py-2">
+              <div class="d-flex flex-row justify-content-between align-items-center">
+                  <!-- Display current contact weather -->
+                  <section class="col-7 bg-light p-2">
+                      <div id="weather" class="container" >
+                          <h2 class="h5">Weather</h2>
+                        </div>
+                    </section>
+                    
+                    <!-- Current contact information -->
+                    <section class="col-4 bg-light p-2">
+                        <div class="container" id="contact-info">
+                            <h4 class="h5">Contact Information</h4>
+                        </div>
+                    </section>
                 </div>
-                <div class="modal-body">
-                  <form class="bg-light container">
-                    <div id="contact-information" class="">
-                      <form class=" bg-light py-4 px-4">
-                        <div class="row">
-                        <div class="col-6">
-                        <label for="first-name">First Name</label>
-                        <input class="form-control" id="first-name"/>
-                      </div>
-                      <div class="col-6">
-                        <label for="last-name">Last Name</label>
-                        <input class="form-control" id="last-name"/>
-                      </div> <div class="col-6 my-4">
-                        <label for="phone-number">Phone Number</label>
-                        <input class="form-control" id="phone-number"/>
-                      </div> <div class="col-6 my-4">
-                        <label for="email">Email</label>
-                        <input class="form-control" id="email"/>
-                      </div> <div class="col-12">
-                        <label for="address">Address</label>
-                        <input class="form-control" id="address"/>
-                      </div>
-                      <!-- <div class="col-12 mt-3 d-flex justify-content-center">
-                        <button id="save-button" class="btn btn-secondary">Save</button>
-                      </div> -->
-                      </div>
+                
+                <!-- Display contact location on map -->
+                <section class="col-12 mt-2 bg-light">
+                    <div id="location-map" class="container" >
+                        <h2>Map</h2>
                     </div>
-                  </form>
-                </div>
-                  <button id="save-button" type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
-                </div>
+                </section>
+            </section>
+        </div>
+
+        <!-- Form - Add new contact -->
+        <div id="contact-information" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">New Contact Information</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="bg-light container">
+                  <div id="contact-information" class="">
+                    <form class=" bg-light py-4 px-4">
+                      <div class="row">
+                      <div class="col-6">
+                      <label for="first-name">First Name</label>
+                      <input class="form-control" id="first-name"/>
+                    </div>
+                    <div class="col-6">
+                      <label for="last-name">Last Name</label>
+                      <input class="form-control" id="last-name"/>
+                    </div> <div class="col-6 my-4">
+                      <label for="phone-number">Phone Number</label>
+                      <input class="form-control" id="phone-number"/>
+                    </div> <div class="col-6 my-4">
+                      <label for="email">Email</label>
+                      <input class="form-control" id="email"/>
+                    </div> <div class="col-12">
+                      <label for="address">Address</label>
+                      <input class="form-control" id="address"/>
+                    </div>
+                    <div class="col-12 mt-3 d-flex justify-content-center">
+                        <button id="save-button" type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                    </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
               </div>
             </div>
           </div>
+        </div>
 
         <!-- Validation Modal -->
         <div id="validationModal" class="modal" tabindex="-1" role="dialog">
