@@ -96,6 +96,17 @@ function renderContactList() {
 function callAllFunctions() {
     var address = $(this).attr('data-address');
     addressToMap(address);
+
+    var contactIndex = $(this).attr('data-contact-index');
+    var contact = state.contacts[contactIndex];
+    renderContactInformation(contact);
+}
+
+function renderContactInformation(contact) {
+    $("#display-name").text(contact.firstName+" "+contact.lastName);
+    $("#display-number").text(contact.phoneNumber);
+    $("#display-email").text(contact.email);
+    $("#display-address").text(contact.address);
 }
 
 function deleteContact() {
@@ -160,10 +171,6 @@ function saveState() {
 
     localStorage.setItem("umbrella-address-book", json);
 }
-
-// function renderContactInformation(contactIndex) {
-
-//     var nameHeading = $("<");
 
 // Rendering a map from Google Maps API
 
