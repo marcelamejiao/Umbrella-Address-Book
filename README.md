@@ -61,7 +61,7 @@ The contact list is rendered by a function that creates a list, saves this infor
 
 Diverse buttons are displayed on the screen to help the user to navigate in the app. These ones are: "+" (create a new contact), "save", "X" (delete contact), "current contact" (displayed with the first name and last name). 
 
-To create a contact the user press the "+" button, where a modal is displayed with 5 inputs: first name, last name, phone number, email and address. When the user presses the "save" button this information is sent to the local storage and it is displayed on the list as a contact button with the first name and last name of the recently saved contact. This is also a button that when pressed the contact information is displayed on the right top corner of the screen and also the map is updated with the contact's current location.
+To create a contact the user press the "+" button, where a modal is displayed with 5 inputs: first name, last name, phone number, email and address. When the user presses the "save" button this information is sent to the local storage and it is displayed on the list as a contact button with the first name and last name of the recently saved contact. This is also a button that when pressed the contact information is displayed on the top right corner of the screen and also the map is updated with the contact's current location.
 
 
 ### Google Maps API:

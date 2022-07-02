@@ -94,9 +94,11 @@ function renderContactList() {
 }
 
 function callAllFunctions() {
+    // Update the contact's location on the map
     var address = $(this).attr('data-address');
     addressToMap(address);
 
+    // Show the contact's information on the top right corner
     var contactIndex = $(this).attr('data-contact-index');
     var contact = state.contacts[contactIndex];
     renderContactInformation(contact);
@@ -143,6 +145,7 @@ function saveContact(event) {
     $("#email").val("");
     $("#address").val("");
 
+    // Create a contact object
     var contact = {
         firstName: firstNameValue,
         lastName: lastNameValue,
@@ -151,6 +154,7 @@ function saveContact(event) {
         address: addressValue,
     };
 
+    // Save the contact object in the state
     state.contacts.push(contact);
     saveState();
 
