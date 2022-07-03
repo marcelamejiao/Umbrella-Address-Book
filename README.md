@@ -45,14 +45,15 @@ It's done when I am presented with a landing page where I can enter the address 
 When I click on that contact, I am taken to a map displaying their location and the prevailing weather conditions of that location.
 
 ## Project Timeline
-(insert image of timeline when completed 3 July)
+![project_timeline](https://user-images.githubusercontent.com/36496885/177035007-3af08b86-cd52-44b7-ba7f-0ff0ef55bfbe.jpg)
+
 
 ## One page initial outline and summary of project including wireframe
 
 ![](./UmbrellaWireFrame.gif)
 
 ## HTML and Javascript
-(insert work milestones and key concepts of journey)
+
 
 
 ### Google Maps API:
