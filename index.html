@@ -1,117 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link 
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-      rel="stylesheet" 
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Umbrella</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <body>
-    <header class="bg-dark text-light text-center">
-      <h1>Umbrella</h1>
-      <p>An address book to find my friends, join them and see the current weather.</p>
-    </header>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Umbrella</title>
+</head>
 
-    <main>
-      <div class="d-flex flex-row">
-        <!-- Contacts section -->
-        <section id="contacts" class="d-flex flex-column bg-light col-5">        
-            <div class="d-flex flex-row">
-              <div class="col-11">
-                <h2 class= "bg-dark text-light">Contacts</h2>
-              </div>
-              <div class="col-1">
-                <button id="add-button">+</button>
-              </div>
-            </div>
-            <div>
-              <section id="contact-list">
-              <h3>Contact List</h3>
-              <ul>
-              <!-- href or buttons created from javascript function? AB/SW-->
-              </ul>
-            </section>
-            </div>
-        </section>
+<body>
+  <header class="bg-success text-light text-center">
+    <h1>Umbrella</h1>
+    <p>An address book to find your friends, meet up with them and see the current weather for where they are.</p>
+  </header>
 
-        <section id="contact-data" class="bg-light d-flex flex-column col-7">
-          <div class="d-flex flex-row">
-            <!-- Display current contact weather -->
-            <section class="col-9 border border-secondary">
-              <div id="weather" class="container" >
-                <h2>Weather</h2>
-              </div>
-            </section>
+  <main>
 
-            <!-- Current contact information -->
-            <section class="col-3 bg-light">
-              <div class="container" id="contact-info">
-                <h4>Contact Information</h4>
-              </div>
-            </section>
+    <div class="d-flex flex-column col-12">
+      <!-- Contacts section -->
+
+      <section id="contacts" class="d-flex flex-column col-12 container-xl">
+        <div class="d-flex flex-row">
+
+          <div class="col-12">
+            <button type="button" class="button btn-success col-md-12 text-center justify-content-center"
+              id="add-button">Click to add contacts
+              +</button>
           </div>
+        </div>
+    </div>
+    </section>
+    <section id="contact-container" class="flex-row col-12">
+      <section id="contact-list" class="text-success text-center">
+        <h3>Contact List</h3>
+        <ul>
+          <!-- href or buttons created from javascript function? AB/SW-->
+        </ul>
 
-          <!-- Display contact location on map -->
-          <section class="col-12 border border-secondary">
-            <div id="location-map" class="container" >
-              <h2>Map</h2>
+      </section>
+
+      <section id="contact-data" class="d-flex flex-column col-12 ">
+        <div class="d-flex flex-column">
+
+          <!-- Current contact information -->
+          <section class="flex-row col-12">
+            <div class="container-fluid flex-row text-success text-center" id="contact-info">
+              <h4>Contact Information</h4>
+              <div id="display-name"></div>
+              <div id="display-number"></div>
+              <div id="display-email"></div>
+              <div id="display-address"></div>
             </div>
           </section>
-        </section>
+        </div>
+      </section>
+      <!-- Display current contact weather -->
+      <section class="col-12 border border-success text-center">
+        <div id="weather" class="container text-success">
+          <h2>Weather</h2>
+        </div>
+      </section>
 
-        <!-- Form - Add new contact -->
-        <div id="contact-information" class="d-none">
-          <form class=" bg-light">
-            <h2>New Contact Information</h2>
-            <label for="first-name">First Name</label>
-            <input id="first-name"/>
-            <label for="last-name">Last Name</label>
-            <input id="last-name"/>
-            <label for="phone-number">Phone Number</label>
-            <input id="phone-number"/>
-            <label for="email">Email</label>
-            <input id="email"/>
-            <label for="address">Address</label>
-            <input id="address"/>
-            <button id="save-button">Save</button>
-          </form>
+      <!-- Display contact location on map -->
+      <section class="col-12 border border-success">
+        <div id="location-map" class="container-fluid flex-row text-success text-center">
+          <h2>Map</h2>
+        </div>
+      </section>
+    </section>
+
+    <!-- Form - Add new contact -->
+    <div id="contact-information" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Contact Information</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="bg-light container">
+              <div class="row my-1">
+                <label class="col-6" for="first-name">First Name</label>
+                <input class="col-6" id="first-name" placeholder="John" type="text" />
+              </div>
+              <div class="row my-1">
+                <label class="col-6" for="last-name">Last Name</label>
+                <input class="col-6" id="last-name" placeholder="Smith" type="text" />
+              </div>
+              <div class="row my-1">
+                <label class="col-6" for="phone-number">Phone Number</label>
+                <input class="col-6" id="phone-number" placeholder="0412 345 678" type="text" />
+              </div>
+              <div class="row my-1">
+                <label class="col-6" for="email">Email</label>
+                <input class="col-6" id="email" placeholder="JSmith9@gmail.com" type="text" />
+              </div>
+              <div class="row my-1">
+                <label class="col-6" for="address">Address</label>
+                <input class="col-6" id="address" placeholder="10 Example Street Suburb STATE " type="text" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="save-button" type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+          </div>
         </div>
       </div>
-      <footer>
-        <p>Copyright 2022</p>
-      </footer>
-    </main>
+    </div>
 
-    <!-- JS -->
-    <!-- Google Maps API Link with Dan's API -->
-    <script async
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A">
-</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <!-- Validation Modal -->
+    <div id="validationModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Validation Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Please fill in all contact fields.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer>
+      <nav class="navbar navbar-light text-light text-center bg-success">
+        <span class="navbar-text text-light text-center">
+          Copyright &copy; 2022
+        </span>
+      </nav>
+    </footer>
+  </main>
 
-  </body>
+  <!-- JS -->
+  <!-- Google Maps API Link with Dan's API -->
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSVjMQM3Hgp3upVIWiHSW1CTTP-VFT85A">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
 </html>
