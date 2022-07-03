@@ -1,29 +1,42 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+#contacts {
+    width: 100%;
+    background-size: cover;
+    position: center;
 }
 
-#contacts {
-    margin: 20 20 20 20;
-    width: 100%;
-    background-color: grey;
-    background-size: cover;
-    position: left;
+#contact-list ul {
+    list-style-type: none;
+    border-color: green;
+    
+    
 }
 
 #contact-data {}
 
-#contact-info {}
+/* #contact-information {} */
 
-#weather {}
+/* #weather {} */
 
 #location-map {
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
-header {
-    p: 20px;
+
+ul {
+    list-style-type: none;
+    text: success
 }
 
-footer {}
+button {
+    padding: 5px;
+
+
+}
+footer{
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    flex-direction: column;
+}
