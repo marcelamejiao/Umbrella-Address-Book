@@ -85,5 +85,27 @@ On the index.html page, the element (div) with id 'weather' is then assigned the
 * Styling of buttons
 * Merging headings and button copy to improve user experience
 * Formatting of content for mobile and desktop - designed mobile first
-* Screen shot before styling (insert image)
-* Screen shot after styling (insert image)
+* Screen shot before styling 
+
+<img width="2082" alt="Screen Shot 2022-07-03 at 7 48 29 am" src="https://user-images.githubusercontent.com/36496885/177033903-d7f80f16-3138-4ceb-ac4a-a5f97c5c4f89.png">
+
+
+* Screen shot after styling 
+
+Desktop:
+
+<img width="1040" alt="desktop" src="https://user-images.githubusercontent.com/36496885/177033920-939dee7d-0179-492e-b612-4b63ee19d095.png">
+
+
+
+
+
+
+Mobile:
+
+<img width="413" alt="mobile" src="https://user-images.githubusercontent.com/36496885/177033931-f72ca95b-7f33-40bc-8048-7c1d45d382a6.png">
+
+
+
+
+
