@@ -26,47 +26,48 @@
     <div class="container-fluid">
       <!-- Contacts section -->
       <div class="row">
-        <section id="contacts" class="col-lg-3 col-sm-12">
-          <div class="row">
-            <h2 class="bg-dark text-light col-9">Contacts</h2>
-            <div class="col-3">
-              <button id="add-button">+</button>
-            </div>
+        <section id="contacts" class="col-lg-3 col-sm-12 ">
+          <div class="row d-flex align-items-center justify-content-center justify-content-lg-start bg-dark text-center text-light">
+            <h2>
+              Contacts
+            </h2>
+              <button id="add-button"><i class="fas fa-plus"></i></button>
           </div>
+
           <section id="contact-list">
             <ul>
               <!-- li items created via JS function-->
             </ul>
           </section>
         </section>
-  
+
         <section id="contact-data" class="col-lg-7 col-sm-12">
-          <div class="row">
+          <div class="row ">
             <!-- Display current contact weather -->
-            <section class="col-lg-6 col-sm-12 border border-secondary ">
-              <div id="weather" class="container">
+            <section id="weather" class="d-flex align-items-center justify-content-center col-lg-6 col-sm-12 border border-secondary text-center">
                 <h2>Weather</h2>
-              </div>
             </section>
 
             <!-- Current contact information -->
-            <section class="col-lg-6 col-sm-12 bg-light">
-              <div class="container" id="contact-info">
+            <section id="contact-info" class="col-lg-6 col-sm-12 bg-light text-lg-left text-center">
+              <!-- <div class="container" > -->
                 <h4>Contact Information</h4>
                 <div id="display-name"></div>
                 <div id="display-number"></div>
                 <div id="display-email"></div>
                 <div id="display-address"></div>
-              </div>
+              <!-- </div> -->
             </section>
-          </div>
+        
 
           <!-- Display contact location on map -->
-          <section class="col-12 border border-secondary">
-            <div id="location-map" class="container">
+      
+          <section id="location-map" class="col-sm-12 border border-secondary">
+            <!-- <div  class="container"> -->
               <h2>Map</h2>
-            </div>
+            <!-- </div> -->
           </section>
+        </div>
         </section>
 
         <!-- Form - Add new contact -->
@@ -129,6 +130,7 @@
             </div>
           </div>
         </div>
+        
       </div>
 
       <footer>

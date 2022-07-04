@@ -11,6 +11,10 @@
     background-size: cover;
     position: left;
 }
+#contacts h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 #contact-list ul {
     list-style-type: none;
@@ -27,4 +31,9 @@ ul {
 
 button {
     padding: 5px;
+    margin:1px;
+}
+
+#weather{
+    font-size:x-large;
 }
