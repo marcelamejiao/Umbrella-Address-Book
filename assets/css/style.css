@@ -5,22 +5,20 @@
 }
 
 #contacts {
-    margin: 20 20 20 20;
+    margin: 20;
     width: 100%;
-    background-color: grey;
+    background-color: lightgrey;
     background-size: cover;
     position: left;
+}
+#contacts h2 {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #contact-list ul {
     list-style-type: none;
 }
-
-#contact-data {}
-
-/* #contact-information {} */
-
-/* #weather {} */
 
 #location-map {
     height: 500px;
@@ -33,7 +31,9 @@ ul {
 
 button {
     padding: 5px;
+    margin:1px;
 }
 
-
-/* footer {} */
+#weather{
+    font-size:x-large;
+}
