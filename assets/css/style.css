@@ -35,5 +35,11 @@ button {
     padding: 5px;
 }
 
+i {
+    color: none;
+    border: none;
+    margin-left: 5px;
+}
+
 
 /* footer {} */
