@@ -108,7 +108,6 @@ function callAllFunctions() {
 }
 
 function renderContactInformation(contact) {
-    console.log(contact)
     $("#display-name").text(contact.firstName+" "+contact.lastName);
     $("#display-number").text(contact.phoneNumber);
     $("#display-email").text(contact.email);
