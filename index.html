@@ -26,20 +26,24 @@
   </header>
 
   <main>
+     <!-- Hero photo and subtitle  -->
+    <section class="hero" role="img" aria-label="Welcome banner"></section>
+    <!-- <img src="./assets/images/hero.png" class="img-fluid w-100 mh-25" alt="hero image" -->
+
     <div class="container-fluid">
       <!-- Contacts section -->
       <div class="row">
         <section id="contacts" class="col-lg-3 col-sm-12 ">
           <div
             class="row d-flex align-items-center justify-content-center justify-content-lg-start bg-dark text-center text-light">
-            <h2>
+            <h3 class="col-xl-10 text-xl-left p-0">
               Contacts
-            </h2>
-            <button id="add-button"><i class="fas fa-plus"></i></button>
+            </h3>
+            <button id="add-button" class="col-xl-2 rounded btn btn-secondary m-1 m-xl-0" title="Add new contact"><i class="fas fa-plus"></i></button>
           </div>
 
-          <section id="contact-list">
-            <ul>
+          <section id="contact-list" class="row">
+            <ul class="w-100 container">
               <!-- li items created via JS function-->
             </ul>
           </section>
@@ -49,12 +53,12 @@
           <div class="row ">
             <!-- Display current contact weather -->
             <section id="weather"
-              class="d-flex align-items-center justify-content-center col-lg-6 col-sm-12 border border-secondary text-center">
-              <h2>Weather</h2>
+              class="d-flex align-items-center justify-content-center col-lg-6 col-sm-12 text-center dashed-border">
+              <h4>Weather</h4>
             </section>
 
             <!-- Current contact information -->
-            <section id="contact-info" class="col-lg-6 col-sm-12 bg-light text-lg-left text-center border border-secondary">
+            <section id="contact-info" class="d-flex flex-column col-lg-6 col-sm-12 bg-light align-items-center text-center justify-content-center dashed-border">
               <!-- <div class="container" > -->
               <h4 class="text-center">Contact Information</h4>
               <div class="text-center" id="display-name"></div>
@@ -67,7 +71,7 @@
 
             <!-- Display contact location on map -->
 
-            <section id="location-map" class="col-sm-12 border border-secondary">
+            <section id="location-map" class="d-flex col-sm-12 align-items-center text-center justify-content-center dashed-border">
               <!-- <div  class="container"> -->
               <h2>Map</h2>
               <!-- </div> -->
@@ -110,7 +114,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button id="save-button" type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                <button id="save-button" type="button" class="btn btn-secondary rounded" data-dismiss="modal">Save</button>
               </div>
             </div>
           </div>
