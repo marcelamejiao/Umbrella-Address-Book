@@ -17,6 +17,12 @@ p {
     background-position: center;
     position: relative;
 }
+
+.dashed-border {
+    border-color: black;
+    border-style: dashed;
+    border-width: 1px;
+}
  
 #contacts {
     background-color: lightgrey;
