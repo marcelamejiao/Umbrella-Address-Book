@@ -71,21 +71,23 @@ function renderContactList() {
         // Defines the contact of current itteration
         var contact = state.contacts[i];
         // Creates a new button in list with contacts first and last name
-        var listItem = $("<li><button>" + contact.firstName + " " + contact.lastName + "</button></li>");
+        var listItem = $("<li></li>");
+        var contactButton = $("<button>" + contact.firstName + " " + contact.lastName + "</button>")
         // assigns their address to the attribute data-address
-        listItem.attr('data-address', state.contacts[i].address);
+        contactButton.attr('data-address', state.contacts[i].address);
         // Assigns their contact index to their index in local storage to allow functions to grab the correct info
-        listItem.attr('data-contact-index', i);
+        contactButton.attr('data-contact-index', i);
         // Creates a new button -  a delete button
-        var deleteButton = $("<button>X</button>");
+        var deleteButton = $('<i class="fas fa-square-xmark"></i>');
         // Assigns their contact index to their index
         deleteButton.attr('data-contact-index', i);
         // Appends delete button to contact button/li
+        listItem.append(contactButton);
         listItem.append(deleteButton);
         // Appends li and buttons to the contact List
         contactList.append(listItem);
         // Adds event listener to contact buttons to call all functions to display info
-        listItem.on('click', callAllFunctions);
+        contactButton.on('click', callAllFunctions);
         // Adds event listener to delete buttons to delete contact info
         deleteButton.on('click', deleteContact);
         // Appends listItem to contact ul 
@@ -94,16 +96,18 @@ function renderContactList() {
 }
 
 function callAllFunctions() {
+    // Update the contact's location on the map
     var address = $(this).attr('data-address');
     addressToMap(address);
 
+    // Show the contact's information on the top right corner
     var contactIndex = $(this).attr('data-contact-index');
     var contact = state.contacts[contactIndex];
     renderContactInformation(contact);
 }
 
 function renderContactInformation(contact) {
-    $("#display-name").text(contact.firstName+" "+contact.lastName);
+    $("#display-name").text(contact.firstName + " " + contact.lastName);
     $("#display-number").text(contact.phoneNumber);
     $("#display-email").text(contact.email);
     $("#display-address").text(contact.address);
@@ -136,13 +140,14 @@ function saveContact(event) {
         $('#validationModal').modal("show");
         return;
     }
-    // Reset the form 
+    // Resert the form 
     $("#first-name").val("");
     $("#last-name").val("");
     $("#phone-number").val("");
     $("#email").val("");
     $("#address").val("");
 
+    // Create a contact object
     var contact = {
         firstName: firstNameValue,
         lastName: lastNameValue,
@@ -151,6 +156,7 @@ function saveContact(event) {
         address: addressValue,
     };
 
+    // Save the contact object in the state
     state.contacts.push(contact);
     saveState();
 
