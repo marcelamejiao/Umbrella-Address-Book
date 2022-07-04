@@ -4,6 +4,20 @@
     margin: 0;
 }
 
+p {
+    margin-bottom: 0;
+}
+
+/* Style hero banner */
+ .hero {
+    height: 10vw;
+    width: 100%;
+    background-image: url("../images/hero.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+ 
 #contacts {
     margin: 20;
     width: 100%;
@@ -20,8 +34,12 @@
     list-style-type: none;
 }
 
+#contact-info {
+    min-height: 135px;
+}
+
 #location-map {
-    height: 500px;
+    height: 300px;
     width: 100%;
 }
 
