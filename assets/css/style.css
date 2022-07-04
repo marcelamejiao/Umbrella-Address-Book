@@ -43,6 +43,10 @@ p {
     width: 100%;
 }
 
+button:hover {
+    border-color: #80ffff;
+}
+
 ul {
     list-style-type: none;
 }
